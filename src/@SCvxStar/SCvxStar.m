@@ -385,7 +385,7 @@ classdef SCvxStar < handle
                         next_iter.r = min(obj.this_iter.r * obj.constParams.alpha2, obj.constParams.r_max); % expand trust region
                     elseif 1 - obj.constParams.eta1 <= obj.this_iter.rho && obj.this_iter.rho <= 1 + obj.constParams.eta1
                         % do nothing
-                    else
+                    else % rho is outside [1-eta, 1+eta1]
                         next_iter.r = max(obj.this_iter.r / obj.constParams.alpha1, obj.constParams.r_min); % shrink trust region
                     end
             end

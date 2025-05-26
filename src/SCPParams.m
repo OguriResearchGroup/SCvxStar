@@ -11,7 +11,7 @@ classdef SCPParams < handle
         rho2                        = 0.7; % rho2 < rho: increase trust region radius (for exact linearization)
         eta0                        = 1; % accept solution and update the reference if rho is within 1 - eta0 and 1 + eta0 (for inexact linearization)
         eta1                        = 0.75; % decrease trust region radius if rho is not within 1 - eta1 and 1 + eta1 (for inexact linearization)
-        eta2                        = 0.1; % increase trust region radius if rho is within 1 - eta2 and 1 + eta2 (for inexact linearization)
+        eta2                        = 0.1; % eta2 < eta1: increase trust region radius if rho is within 1 - eta2 and 1 + eta2 (for inexact linearization)
         alpha1 {mustBePositive}     = 2; % divide trust region radius by alpha1
         alpha2 {mustBePositive}     = 3; % multiply trust region radius by alpha2
         beta {mustBePositive}       = 2; % multiply penalty parameter by beta
